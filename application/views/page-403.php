@@ -4,15 +4,17 @@
     <title>Access Denied</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta charset="UTF-8">
-    <link rel="icon" type="image/png" sizes="16x16" href="<?=base_url();?>assets/images/favicon.png">
-    <link rel="stylesheet" href="style.css">
-    <link href="<?=base_url();?>assets/css/style.css" rel="stylesheet">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="<?=base_url("assets/dist/img/deckle_logo.png")?>">
+    
+    <!-- Theme style -->
+    <link rel="stylesheet" href="<?=base_url("assets/dist/css/adminlte.min.css?v=".time())?>">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 
 <body>
     <div class="w3-display-middle" style="top:40%;">
-        <center><img class="w3-center w3-animate-zoom" src="<?=base_url('assets/images/logo.png')?>" style="width:400px;margin-bottom:10px;padding-bottom:10px;border-bottom:2px dotted #000000;"/></center>
+        <center><img class="w3-center w3-animate-zoom" src="<?=base_url('assets/dist/img/deckle_text_logo.png')?>" style="width:400px;margin-bottom:10px;padding-bottom:10px;border-bottom:2px dotted #000000;"/></center>
         <h1 class="w3-jumbo w3-animate-top w3-center text-twitter">Access Denied</h1>
         <hr class="w3-border-white w3-animate-left" style="margin:auto;width:50%">
         <h3 class="w3-center w3-animate-right">You Don't Have Permission To View This Page</h3>

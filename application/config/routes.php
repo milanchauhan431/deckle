@@ -53,3 +53,8 @@ $route['default_controller'] = 'auth';
 $route['404_override'] = 'error_404';
 $route['404'] = 'error_404';
 $route['translate_uri_dashes'] = FALSE;
+
+$route['country'] = "baseController/countryList";
+$route['country/edit/(:any)/(:any)'] = "baseController/editCountry/$1/$2";
+$route['state'] = "baseController/stateList";
+$route['city'] = "baseController/cityList";

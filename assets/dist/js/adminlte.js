@@ -3,6 +3,24 @@
  * Copyright 2014-2022 Colorlib <https://colorlib.com>
  * Licensed under MIT (https://github.com/ColorlibHQ/AdminLTE/blob/master/LICENSE)
  */
+
+/* Auto Active Sidebar Button On URL */
+var url = window.location;
+
+// for sidebar menu entirely but not cover treeview
+$('ul.nav-sidebar a').filter(function() {
+    if (this.href) {
+        return this.href == url || url.href.indexOf(this.href) == 0;
+    }
+}).addClass('active');
+
+// for the treeview
+$('ul.nav-treeview a').filter(function() {
+    if (this.href) {
+        return this.href == url || url.href.indexOf(this.href) == 0;
+    }
+}).parentsUntil(".nav-sidebar > .nav-treeview").addClass('menu-open').prev('a').addClass('active');
+
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('jquery')) :
   typeof define === 'function' && define.amd ? define(['exports', 'jquery'], factory) :
@@ -1253,7 +1271,7 @@
     } // Public
 
 
-    var _proto = IFrame.prototype;
+    var _proto = IFrame.prototype;    
 
     _proto.onTabClick = function onTabClick(item) {
       this._config.onTabClick(item);
@@ -1603,7 +1621,7 @@
         $__default["default"](e).parents('.nav-treeview').prevAll('.nav-link').addClass('active');
       });
     };
-
+    
     _proto._fixHeight = function _fixHeight(tabEmpty) {
       if (tabEmpty === void 0) {
         tabEmpty = false;
@@ -2190,7 +2208,7 @@
     maxResults: 7,
     highlightName: true,
     highlightPath: false,
-    highlightClass: 'text-light',
+    highlightClass: 'text-dark',
     notFoundText: 'No element found!'
   };
   var SearchItems = [];
