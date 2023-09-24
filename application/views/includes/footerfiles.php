@@ -31,3 +31,5 @@ $.widget.bridge('uibutton', $.ui.button)
 <script src="<?=base_url("assets/dist/js/adminlte.js?v=".time())?>"></script>
 <!-- AdminLTE for demo purposes -->
 <!-- <script src="<?=base_url("assets/dist/js/demo.js?v=".time())?>"></script> -->
+
+<script src="<?=base_url("assets/js/waves.js?v=".time())?>"></script>

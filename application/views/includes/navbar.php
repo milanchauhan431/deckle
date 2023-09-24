@@ -137,6 +137,39 @@
             </a>
         </li> -->
 
+        <!-- User profile -->
+        <li class="nav-item dropdown">
+            <a class="nav-link" data-toggle="dropdown" href="#">
+                <img src="<?=base_url("assets/dist/img/user_default.png")?>" alt="user" class="rounded-circle" width="30">
+            </a>
+            <div class="dropdown-menu dropdown-menu-md dropdown-menu-right logout-menu  animated lightSpeedIn">
+                <span class="with-arrow">
+                    <span class=""></span>
+                </span>
+                <a href="#" class="dropdown-item" style="background-color: #20c997">
+                    <div class="d-flex no-block align-items-center p-10 text-white m-b-10" style="border-radius: 0.25rem;">
+                        <div class="p-1">
+                            <img src="<?=base_url("assets/dist/img/user_default.png")?>" alt="user" class="img-circle" width="40">
+                        </div>
+                        <div class="ml-1 text-center">
+                            <h5 class="mb-0">Deckle</h5>
+                            <p class=" mb-0">Admin</p>
+                        </div>
+                    </div>
+                </a>
+                <div class="dropdown-divider"></div>
+                <a href="#" class="dropdown-item">
+                    <i class="fa fa-user mr-1 ml-1"></i> My Profile
+                </a>
+                <div class="dropdown-divider"></div>
+                <a href="#" class="dropdown-item">
+                    <i class="fa fa-key mr-1 ml-1"></i> Change Password
+                </a>
+                <div class="dropdown-divider"></div>
+                <a href="<?=base_url('auth')?>" class="dropdown-item"><i class="fa fa-power-off mr-1 ml-1"></i> Logout</a>
+            </div>
+        </li>
+        <!-- User profile -->
     </ul>
 </nav>
 <!-- /.navbar -->
