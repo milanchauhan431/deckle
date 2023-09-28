@@ -18,27 +18,32 @@
 			<img src="<?=base_url("assets/dist/img/bg.svg")?>">
 		</div>
 		<div class="login-content">
-			<form>
+			<form id="loginForm">
 				<!-- <img src="<?=base_url("assets/dist/img/avatar.svg")?>"> -->
 				<img src="<?=base_url("assets/dist/img/deckle_text_logo.png")?>">
-           		<div class="input-div one userName">
-           		   <div class="i">
-           		   		<i class="fas fa-user"></i>
-           		   </div>
-           		   <div class="div">
-					  	<h5>Username</h5>
-           		   		<input type="text" class="input" name="userName" id="userName" placeholder="">
-           		   </div>
-           		</div>
-           		<div class="input-div pass">
-           		   <div class="i"> 
-           		    	<i class="fas fa-lock"></i>
-           		   </div>
-           		   <div class="div">
-					  	<h5>Password</h5>
-           		    	<input type="password" class="input" name="password" id="password" placeholder="">
-            	   </div>
-            	</div>
+				<div class="error formError"></div>
+				<div class="form-input">
+					<div class="input-div one userName">
+						<div class="i">
+								<i class="fas fa-user"></i>
+						</div>
+						<div class="div">
+							<h5>Username</h5>
+							<input type="text" class="input" name="userName" id="userName" placeholder="">
+						</div>
+					</div>
+				</div>
+				<div class="form-input">
+					<div class="input-div pass">
+						<div class="i"> 
+								<i class="fas fa-lock"></i>
+						</div>
+						<div class="div">
+								<h5>Password</h5>
+								<input type="password" class="input" name="password" id="password" placeholder="">
+						</div>
+					</div>
+				</div>
                 <div class="rememberMe icheck-success">
                     <input type="checkbox" id="rememberMe" onclick="lsRememberMe()">
                     <label for="rememberMe">
@@ -57,6 +62,10 @@
 </body>
 <!-- jQuery -->
 <script src="<?=base_url("assets/plugins/jquery/jquery.min.js?=".time())?>"></script>
+<!-- jquery-validation -->
+<script src="<?=base_url("assets/plugins/jquery-validation/jquery.validate.min.js?=".time())?>"></script>
+<script src="<?=base_url("assets/plugins/jquery-validation/additional-methods.min.js?=".time())?>"></script>
+
 <script>
 const inputs = document.querySelectorAll(".input");
 const rmCheck = document.getElementById("rememberMe"),emailInput = document.getElementById("userName"),password = document.getElementById("password");
@@ -72,8 +81,63 @@ $(document).ready(function(){
         password.value = "";
     }
 
-	$(document).on('click','#login',function(){
+	//check auth token
+	if(localStorage.authToken != ""){
 		window.location.href = '<?=base_url("dashboard")?>';
+	}
+
+	$('#loginForm').validate({
+		rules: {
+			userName: {
+				required: true
+			},
+			password: {
+				required: true
+			}
+		},
+		messages: {
+			userName: {
+				required: "Please enter a Username"
+			},
+			password: {
+				required: "Please provide a password"
+			}
+		},
+		errorElement: 'span',
+		errorPlacement: function (error, element) {
+			error.addClass('invalid-feedback');
+			element.closest('.form-input').append(error);
+		},
+		highlight: function (element, errorClass, validClass) {
+			$(element).addClass('is-invalid');
+		},
+		unhighlight: function (element, errorClass, validClass) {
+			$(element).removeClass('is-invalid');
+		}
+	});
+
+	$(document).on('click','#login',function(){
+		$("#loginForm").valid();
+		if($("#loginForm").valid() == false){ return false; }
+		
+		var form = $('#loginForm')[0];
+		var fd = new FormData(form);
+		$.ajax({
+			url : '<?=API_URL?>'+'login',
+			type : 'post',
+			data : fd,
+			processData:false,
+			contentType:false,
+			dataType:"json",
+		}).done(function(response){
+			if(response.status == "true"){
+				localStorage.authToken = response.data.token;
+				localStorage.menus = response.data.menus;
+				window.location.href = '<?=base_url("dashboard")?>';
+			}else{
+				$(".formError").html(response.message);
+			}
+		});
 	});
 });
 
