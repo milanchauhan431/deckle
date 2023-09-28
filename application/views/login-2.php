@@ -126,6 +126,7 @@ $(document).ready(function(){
 			url : '<?=API_URL?>'+'login',
 			type : 'post',
 			data : fd,
+			crossDomain: true,
 			processData:false,
 			contentType:false,
 			dataType:"json",
