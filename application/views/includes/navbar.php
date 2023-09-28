@@ -166,7 +166,7 @@
                     <i class="fa fa-key mr-1 ml-1"></i> Change Password
                 </a>
                 <div class="dropdown-divider"></div>
-                <a href="<?=base_url('auth')?>" class="dropdown-item"><i class="fa fa-power-off mr-1 ml-1"></i> Logout</a>
+                <a href="javascript:void(0)" id="logout" class="dropdown-item"><i class="fa fa-power-off mr-1 ml-1"></i> Logout</a>
             </div>
         </li>
         <!-- User profile -->

@@ -82,7 +82,7 @@ $(document).ready(function(){
     }
 
 	//check auth token
-	if(localStorage.authToken != ""){
+	if(localStorage.authToken){
 		window.location.href = '<?=base_url("dashboard")?>';
 	}
 

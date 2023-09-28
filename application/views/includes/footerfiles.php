@@ -1,3 +1,7 @@
+<script>
+var base_url = "<?=base_url()?>";
+</script>
+
 <!-- jQuery -->
 <script src="<?=base_url("assets/plugins/jquery/jquery.min.js?v=".time())?>"></script>
 <!-- jQuery UI 1.11.4 -->

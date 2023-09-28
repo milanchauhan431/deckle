@@ -16,6 +16,16 @@
 <!-- ./wrapper -->
 
 <?php $this->load->view("includes/footerfiles"); ?>
-
+<script>
+$(document).ready(function(){
+    $(document).on('click','#logout',function(){
+        localStorage.authToken = "";
+        //localStorage.clear();
+        //console.log(localStorage.authToken);
+        window.location.href = base_url;
+    });
+});
+</script>
 </body>
+
 </html>
