@@ -119,11 +119,12 @@ $(document).ready(function(){
 	$(document).on('click','#login',function(){
 		$("#loginForm").valid();
 		if($("#loginForm").valid() == false){ return false; }
-		console.log('<?=API_URL?>');
+		var api_url = '<?=API_URL?>';
+		console.log(api_url);
 		var form = $('#loginForm')[0];
 		var fd = new FormData(form);
 		$.ajax({
-			url : '<?=API_URL?>'+'login',
+			url : api_url+'login',
 			type : 'post',
 			data : fd,
 			processData:false,
