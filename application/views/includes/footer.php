@@ -19,11 +19,12 @@
 <script>
 $(document).ready(function(){
     $(document).on('click','#logout',function(){
-        var userName = localStorage.username;
+        localStorage.authToken = "";
+        /* var username = localStorage.username;
         var password = localStorage.password;
         localStorage.clear();
-        localStorage.username = userName;
-        localStorage.password = password;
+        localStorage.username = username;
+        localStorage.password = password; */
         window.location.href = base_url;
     });
 });
