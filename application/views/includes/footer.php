@@ -19,9 +19,11 @@
 <script>
 $(document).ready(function(){
     $(document).on('click','#logout',function(){
-        localStorage.authToken = "";
-        //localStorage.clear();
-        //console.log(localStorage.authToken);
+        var userName = localStorage.username;
+        var password = localStorage.password;
+        localStorage.clear();
+        localStorage.username = userName;
+        localStorage.password = password;
         window.location.href = base_url;
     });
 });

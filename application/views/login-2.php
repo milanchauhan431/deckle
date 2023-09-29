@@ -119,14 +119,13 @@ $(document).ready(function(){
 	$(document).on('click','#login',function(){
 		$("#loginForm").valid();
 		if($("#loginForm").valid() == false){ return false; }
-		
+		console.log('<?=API_URL?>');
 		var form = $('#loginForm')[0];
 		var fd = new FormData(form);
 		$.ajax({
 			url : '<?=API_URL?>'+'login',
 			type : 'post',
 			data : fd,
-			crossDomain: false,
 			processData:false,
 			contentType:false,
 			dataType:"json",
