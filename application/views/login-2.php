@@ -120,11 +120,11 @@ $(document).ready(function(){
 		$("#loginForm").valid();
 		if($("#loginForm").valid() == false){ return false; }
 		var api_url = '<?=API_URL?>';
-		console.log(api_url);
+		
 		var form = $('#loginForm')[0];
 		var fd = new FormData(form);
 		$.ajax({
-			url : 'http://dec.saffroninfosoft.com/api/login',
+			url : api_url+'login',
 			type : 'post',
 			data : fd,
 			processData:false,
