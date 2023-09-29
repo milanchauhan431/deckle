@@ -124,7 +124,7 @@ $(document).ready(function(){
 		var form = $('#loginForm')[0];
 		var fd = new FormData(form);
 		$.ajax({
-			url : api_url+'login',
+			url : 'http://dec.saffroninfosoft.com/api/login',
 			type : 'post',
 			data : fd,
 			processData:false,
