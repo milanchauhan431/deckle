@@ -56,19 +56,19 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="<?=base_url("country")?>" class="nav-link">
+                            <a href="<?=base_url("countries")?>" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Country</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?=base_url("state")?>" class="nav-link">
+                            <a href="<?=base_url("states")?>" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>State</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?=base_url("city")?>" class="nav-link">
+                            <a href="<?=base_url("cities")?>" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>City</p>
                             </a>

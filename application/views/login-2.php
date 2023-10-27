@@ -131,7 +131,7 @@ $(document).ready(function(){
 			contentType:false,
 			dataType:"json",
 		}).done(function(response){
-			if(response.status == "true"){
+			if(response.status == true){
 				localStorage.authToken = response.data.token;
 				localStorage.menus = response.data.menus;
 				window.location.href = '<?=base_url("dashboard")?>';

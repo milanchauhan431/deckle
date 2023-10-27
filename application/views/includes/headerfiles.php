@@ -24,6 +24,11 @@
     <link rel="stylesheet" href="<?=base_url("assets/plugins/daterangepicker/daterangepicker.css?v=".time())?>">
     <!-- summernote -->
     <link rel="stylesheet" href="<?=base_url("assets/plugins/summernote/summernote-bs4.min.css?v=".time())?>">
+
+    <!-- DataTables -->
+    <link rel="stylesheet" href="<?=base_url("assets/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css")?>">
+    <link rel="stylesheet" href="<?=base_url("assets/plugins/datatables-responsive/css/responsive.bootstrap4.min.css")?>">
+    <link rel="stylesheet" href="<?=base_url("assets/plugins/datatables-buttons/css/buttons.bootstrap4.min.css")?>">
     
     <link rel="stylesheet" href="<?=base_url("assets/css/style.css?v=".time())?>">
     <link rel="stylesheet" href="<?=base_url("assets/css/animate.css?v=".time())?>">
