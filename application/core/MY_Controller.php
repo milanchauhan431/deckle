@@ -17,6 +17,7 @@ class MY_Controller extends CI_Controller{
 	}
 	
 	public function printJson($data){
+		//http_response_code(401);
 		print json_encode($data);exit;
 	}
 	

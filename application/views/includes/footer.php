@@ -15,7 +15,10 @@
 </div>
 <!-- ./wrapper -->
 
-<?php $this->load->view("includes/footerfiles"); ?>
+<?php 
+  $this->load->view("includes/footerfiles"); 
+  $this->load->view("includes/modal"); 
+?>
 <script>
 $(document).ready(function(){
     $(document).on('click','#logout',function(){

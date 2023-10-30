@@ -1,12 +1,15 @@
 <?php
 class Countries extends MY_Controller{
+    private $index = "countries/list";
+    private $form = "countries/form";
+
     public function __construct(){
         parent::__construct();
         $this->data['pageName'] = "countries";
     }
 
     public function index(){
-        $this->load->view("countries/list",$this->data);
+        $this->load->view($this->index,$this->data);
     }
 
     public function getDTRows(){
@@ -17,20 +20,24 @@ class Countries extends MY_Controller{
         //$result['draw'] = $data['draw'];
         $result['recordsTotal'] = count($countries);
         $result['recordsFiltered'] = count($countries);
-        $dataRow = array();$i=0;
+        $dataRow = array();$i=1;
         foreach($countries as $row):
-            $i++;
             if($data['length'] != -1):
                 if($i >= $data['start'] && $i <= ($data['start'] + $data['length'])):                
-                    $dataRow[] = ["id" => $i, "countryName" => $row, "remark" => "Test Data ".$i];
+                    $dataRow[] = ["id" => $i, 'date'=>date("Y-m-d H:i:s"), "countryName" => $row, "remark" => "Test Data ".$i];
                 endif;
             else:
-                $dataRow[] = ["id" => $i, "countryName" => $row, "remark" => "Test Data ".$i];
+                $dataRow[] = ["id" => $i, 'date'=>date("Y-m-d H:i:s"),"countryName" => $row, "remark" => "Test Data ".$i];
             endif;
+            $i++;
         endforeach;
         $result['data'] = $dataRow;
         
         $this->printJson(['status'=>true,'message'=>'list','formError'=>0,'data'=>(array)$result]);
+    }
+
+    public function addCountry(){
+        $this->load->view($this->form,$this->data);
     }
 }
 ?>
