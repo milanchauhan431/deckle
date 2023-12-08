@@ -37,4 +37,6 @@
     <link rel="stylesheet" href="<?=base_url("assets/css/style.min.css?v=".time())?>">
     <link rel="stylesheet" href="<?=base_url("assets/css/style.css?v=".time())?>">
     <link rel="stylesheet" href="<?=base_url("assets/css/animate.css?v=".time())?>">
+
+    <link href="<?=base_url();?>assets/css/bootstrap-side-modals.css" rel="stylesheet">
 </head>

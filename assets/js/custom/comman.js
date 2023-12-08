@@ -245,7 +245,6 @@ function reInitMultiSelect(){
 	//$('.scrollable').perfectScrollbar({wheelPropagation: !0});
 }
 
-
 function initModalPlugin(modalId){
 	setTimeout(function(){ 
 		setPlaceHolder();//setMinMaxDate();initMultiSelect();

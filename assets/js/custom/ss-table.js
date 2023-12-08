@@ -111,7 +111,10 @@ function ssDatatable(ele,tableOptions,postData={}){
 				callback(json.data);
 			}).fail(function(xhr, err) { siteLogout(xhr); });
 		},
-		responsive: true,
+		//responsive: true,
+		responsive: {
+			details: true
+		},
 		"scrollY": '52vh',
 		"scrollX": true,
 		orderCellsTop: true,

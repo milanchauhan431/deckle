@@ -7,7 +7,7 @@
                     <h2 class="card-title">Country List</h2>
 
                     <div class="card-tools">
-                        <button type="button" class="btn btn-outline-info waves-effect waves-light addNew press-add-btn permission-write" data-button="both" data-modal_id="modal-sm" data-function="addCountry" data-form_id="countryForm" data-form_title="Add Country" data-api_slug="Country/saveCountry">
+                        <button type="button" class="btn btn-outline-info waves-effect waves-light addNew press-add-btn permission-write" data-button="both" data-modal_id="modal-md" data-function="addCountry" data-form_id="countryForm" data-form_title="Add Country" data-api_slug="Country/saveCountry">
                             <i class="fas fa-plus"></i> Add Country
                         </button>
                     </div>
